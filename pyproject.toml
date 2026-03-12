@@ -6,6 +6,7 @@ dependencies = [
     "dagster==1.12.18",
     "dagster-dbt>=0.28.18",
     "dagster-dlt>=0.28.18",
+    "dbt-bigquery>=1.11.1",
     "dlt[gs]>=1.23.0",
     "jupyter>=1.1.1",
     "pandas>=2.3.3",

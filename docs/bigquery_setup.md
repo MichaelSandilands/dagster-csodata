@@ -53,11 +53,12 @@ We will update the existing Service Account (used for google cloud storage dlt) 
 2. Go back to **IAM & Admin** > **IAM**.
 3. Near the top of the page, click the **+ GRANT ACCESS** button.
 4. In the **New principals** box, paste the Service Account email address.
-5. In the **Assign roles** box, click the dropdown and search for/select:
-    - `BigQuery Job User`
-6. Click **+ ADD ANOTHER ROLE** and search for/select:
-    - `BigQuery Data Editor`
-7. Click **Save**.
+5. Add the following roles:
+   * **`BigQuery User`**: Allows dbt to run queries, read metadata, and list datasets.
+   * **`BigQuery Data Editor`**: Allows dbt to create, update, and drop tables/views inside your datasets.
+   * **`BigQuery Read Session User`**: *(Optional but recommended)* Required if you plan to use the new dbt Fusion engine or BigQuery Storage Read API.
+   * *(Note: Ensure the account still has `Storage Object Admin` or `Storage Object Viewer` from the GCS setup phase so BigQuery can read the external parquet files).*
+6. Click **Save**.
 
 ### 3.4 Connecting dbt to BigQuery (External Tables)
 
